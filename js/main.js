@@ -98,3 +98,35 @@ next.addEventListener('click', function() {
     //imposta
     document.getElementsByClassName('thumb')[activeImage].classList.add('active')
 })
+
+/**
+ * PREV IMG
+ */
+
+ const prev = document.querySelector('.prev')
+
+ prev.addEventListener('click', function() {
+     //infinite loop navigazione
+     if (activeImage == 0) {
+         activeImage = imageCollection.length - 1;
+     } else {
+         activeImage--;
+     }
+
+    // Imposta immagine attiva: reset attuale e imposta la successiva
+    // reset
+    document.querySelector('.image-container.active').classList.remove('active')
+    // imposta active su successiva
+    document.getElementsByClassName('image-container')[activeImage].classList.add('active');
+
+    
+    // Impostare la thumbnail
+    // reset 
+    document.querySelector('.thumb.active').classList.remove('active');
+    
+    //imposta
+    document.getElementsByClassName('thumb')[activeImage].classList.add('active')
+})
+
+ 
+ 
